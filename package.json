@@ -1,0 +1,16 @@
+{
+	"name": "node-red-contrib-viera",
+	"version": "0.0.0",
+	"author": {
+		"name": "Florian Bachmann"
+	},
+	"dependencies": {
+		"panasonic-viera-control": "~0.0.1"
+	},
+	"node-red": {
+		"nodes": {
+			"viera-config": "./lib/node-red-viera-config.js",
+			"viera": "./lib/node-red-viera.js"
+		}
+	}
+}

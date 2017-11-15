@@ -1,0 +1,54 @@
+<script type="text/javascript">
+    function registerNode(type, name) {
+        RED.nodes.registerType(type, {
+            category: 'Viera',
+            color: '#a6bbcf',
+            defaults: {
+                name: {
+                    value: name || type
+                },
+                viera: {
+                    value: '',
+                    type: 'viera-config'
+                },
+                keycode: {
+                    value: '',
+                    required: true
+                }
+            },
+            inputs: 1,
+            outputs: 1,
+            label: function () {
+                return this.name || name || type
+            }
+        });
+    }
+
+    registerNode('send-key-code');
+</script>
+
+<!-- send key code -->
+<script type="text/x-red" data-template-name="send-key-code">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-viera"><i class="icon-bookmark"></i> Viera</label>
+        <input type="text" id="node-input-viera">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-keycode"><i class="icon-bookmark"></i> Code</label>
+        <select type="text" id="node-input-keycode">
+            <option selected="selected">POWER</option>
+            <option>TV</option>
+            <option>HDMI1</option>
+            <option>HDMI2</option>
+            <option>MUTE</option>
+            <option>PLAY</option>
+            <option>PAUSE</option>
+        </select>
+    </div>
+</script>
